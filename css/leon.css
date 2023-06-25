@@ -1,8 +1,8 @@
 /* Start Variables */
 :root {
-    --main-color: #10cab7;
+    --main-color: #4b4b4b;
     --secondary-color: #2c4755;
-    --section-padding: 60px;
+    --section-padding: 40px;
     --section-background: #f6f6f6;
     --main-duration: 0.5s;
 }
@@ -25,6 +25,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.clearfix {clear: both;}
 /* Small */
 @media (min-width: 768px) {
     .container {
@@ -147,15 +148,15 @@ body {
 /* End Header */
 /* Start Landing Section */
 .landing {
-    background-image: url(../img/Landscape.jpg);
+    background-image: url(../img/black-&-white.jpg);
     background-size: cover;
-    height: calc(100vh - 64px);
+    height: calc(100vh - 88px);
     position: relative;
 }
 .landing .intro-text {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 20%;
     text-align: center;
     transform: translate(-50%, -50%);
     width: 320px;
@@ -167,8 +168,7 @@ body {
     font-size: 50px;
     color: var(--main-color);
 }
-.landing .intro-text p {
-    font-size: 19px;
+.landing .intro-text h3 {
     line-height: 1.8;
 }
 /* End Landing Section */
@@ -192,7 +192,7 @@ body {
 }
 .features .feat h3 {
     font-weight: 800;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 .features .feat p {
     line-height: 1.8;
@@ -200,170 +200,195 @@ body {
     font-size: 17px;
 }
 /* End Features */
-/* Start Services  */
-.services {
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+
+/* Start Me  Skills */
+.my-skills {
+	padding-top: 30px;
+	padding-bottom: 50px;
+	overflow: hidden;
 }
-.services .services-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 30px;
-    margin-top: 100px;
+
+.my-skills .skills,
+.my-skills .progress {width: 50%;}
+
+.my-skills .skills h2 {margin: 25px 0 20px 40px;}
+
+.my-skills .skills p {margin: 0 0 10px 40px; color: var(--main-color)}
+
+.my-skills .skills .fa {color: var(--main-color)}
+
+.my-skills .skills button {margin-top: 20px; margin-left: 40px;}
+
+.my-skills .progress .technique {margin-left: 50px}
+
+.progress .technique .bar {
+    background-color: #f2f2f2;
+    height: 20px;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-.services .services-content .srv {
-    display: flex;
-    margin-bottom: 40px;
+.progress .technique .bar:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-@media (max-width: 767px) {
-    .services .services-content .srv {
-        flex-direction: column;
-        text-align: center;
+.technique .bar span {
+	background-color: var(--main-color);
+	height: 20px;
+    float: left;
+	text-align: right;
+	color: #fff;
+	font-weight: bold;
+}
+.indesign {
+    width: 85%;
+    animation: indesign 3s;
+}
+@keyframes indesign {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 85%;
     }
 }
-.services .services-content .srv i {
-    color: var(--main-color);
-    flex-basis: 60px;
+.illustrator {
+    width: 65%;
+    animation: illustrator 3s;
 }
-.services .services-content .srv .text {
-    flex: 1;
-}
-.services .services-content .srv .text h3 {
-    margin: 0 0 20px;
-}
-.services .services-content .srv .text p {
-    color: #444;
-    font-weight: 300;
-    line-height: 1.6;
-}
-.services .services-content .image {
-    text-align: center;
-    position: relative;
-}
-.services .services-content .image::before {
-    content: "";
-    background-color: var(--secondary-color);
-    width: 100px;
-    height: calc(100% + 100px);
-    top: -50px;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-}
-.services .services-content .image img {
-    width: 260px;
-}
-@media (max-width: 1199px) {
-    .image-column {
-        display: none;
+@keyframes illustrator {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 65%;
     }
 }
-/* Start Services  */
-/* Start Portfolio */
-.portfolio {
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
-    background-color: var(--section-background);
+.max {
+    width: 60%;
+    animation: max 3s;
 }
-.portfolio .portfolio-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 30px;
-    margin-top: 80px;
-}
-.portfolio .portfolio-content .card {
-    background-color: white;
-}
-.portfolio .portfolio-content .card img {
-    max-width: 100%;
-}
-.portfolio .portfolio-content .card .info {
-    padding: 20px;
-}
-.portfolio .portfolio-content .card .info h3 {
-    margin: 0;
-}
-.portfolio .portfolio-content .card .info p {
-    color: #777;
-    line-height: 1.6;
-    margin-bottom: 0;
-}
-/* End Portfolio */
-/* Start About */
-.about {
-    padding-top: var(--section-padding);
-    padding-bottom: calc(var(--section-padding) + 60px);
-}
-.about .about-content {
-    margin-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-@media (max-width: 991px) {
-    .about .about-content {
-        flex-direction: column;
-        text-align: center;
+@keyframes max {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 60%;
     }
 }
-.about .about-content .image {
-    position: relative;
-    width: 250px;
-    height: 375px;
+.html {
+    width: 95%;
+    animation: html 3s;
 }
-@media (max-width: 991px) {
-    .about .about-content .image {
-        margin: 0 auto 60px;
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 95%;
     }
 }
-.about .about-content .image::before {
-    content: "";
-    position: absolute;
-    background-color: #ebeced;
-    width: 100px;
-    height: calc(100% + 80px);
-    top: -40px;
-    left: -20px;
-    z-index: -1;
+.css {
+    width: 80%;
+    animation: css 3s;
 }
-.about .about-content .image::after {
-    top: -40px;
-    content: "";
-    position: absolute;
-    width: 120px;
-    height: 300px;
-    border-left: 80px solid var(--main-color);
-    border-bottom: 80px solid var(--main-color);
-    z-index: -1;
-    right: -150px;
-}
-@media (max-width: 991px) {
-    .about .about-content .image::before,
-    .about .about-content .image::after {
-        display: none;
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 80%;
     }
 }
-.about .about-content .image img {
-    max-width: 100%;
+.wordpress {
+    width: 90%;
+    animation: wordpress 3s;
 }
-.about .about-content .text {
-    flex-basis: calc(100% - 500px);
+@keyframes wordpress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
 }
-.about .about-content .text p:first-of-type {
-    font-weight: bold;
-    line-height: 2;
-    margin-bottom: 50px;
+.javascript {
+    width: 70%;
+    animation: javascript 3s;
 }
-.about .about-content .text hr {
-    width: 50%;
-    display: inline-block;
-    border-color: var(--main-color);
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 70%;
+    }
 }
-.about .about-content .text p:last-of-type {
-    line-height: 2;
-    color: #777;
+.python {
+    width: 75%;
+    animation: python 3s;
 }
-/* End About */
+@keyframes python {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+/* End Me  Skills */
+
+/* Start Me  Education */
+.my-education {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	overflow: hidden;
+}
+
+.my-education hr {
+	margin-bottom: 20px 0;
+	background-color: #333;
+	height: 1px;
+	border: 0;
+}
+
+.my-education .main {width: 50%; margin-right: 5%;}
+
+.my-education .main h2 {margin: 25px 0 20px 40px;}
+.my-education .main h2 .fa {color: var(--main-color)}
+.my-education .main h3 {margin: 25px 0 20px 40px;}
+.my-education .main h3 .fa {color: var(--main-color)}
+.my-education .main svg {
+    width:15%;
+    padding:5px;
+    fill: #f2f2f2;
+    stroke: #f2f2f2;
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+.my-education .main ul {margin: 25px 0 20px 40px; color: #333}
+
+.my-education .main p {margin: 0 0 10px 40px;}
+
+.my-education .exp {width: 45%;}
+
+.my-education .exp h3 {margin-top: 70px; margin-bottom: 10px;}
+
+.my-education .exp span {display: block; margin-bottom: 10px;}
+
+.my-education .exp span:first-of-type {color: #333}
+
+.my-education .exp span:last-of-type {
+	background-color: var(--main-color);
+	color: #fff;
+	display: inline-block;
+	padding: 4px 10px;
+}
+
+.my-education .exp ul {line-height: 1.4; color: #888;}
+/* End Me  Education */
+
 /* Start Contact */
 .contact {
     padding-top: var(--section-padding);
@@ -426,7 +451,7 @@ body {
 }
 .fottop span {
     font-weight: bold;
-    color: var(--main-color);
+    color: white;
 }
 .footer .footer-content .copyr {
     position: relative;
@@ -443,9 +468,31 @@ body {
 .footer .footer-content .copyr ul li a {
     display: block;
     transition: var(--main-duration);
-    color: white;
+    color: #f2f2f2;
     text-align: center;
     padding: 16px;
     text-decoration: none;
 }
 /* End Footer */
+
+/* Start My Framework */ 
+h2 {color: #555; text-transform: uppercase;}
+
+h3 {color: #333;}
+
+p {line-height: 1.4; color: #888;}
+
+.my-button {
+	background: none;
+	border: 3px solid var(--main-color);
+	padding: 10px 30px;
+	color: var(--secondary-color);
+	font-weight: bold;
+}
+.my-button a {
+	color: var(--secondary-color);
+	text-decoration: none;
+}
+.fl-left {float: left;}
+
+/* End My Framework */ 
